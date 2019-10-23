@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private appFacade: AppFacade) { }
 
   ngOnInit(): void {
-    this.appFacade.setAppName();
+    this.appFacade.setAppName('Movies');
 
     this.appFacade.getAppName()
     .subscribe({

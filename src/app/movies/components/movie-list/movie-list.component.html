@@ -1,0 +1,12 @@
+<div class="main-div">
+    <mat-card class="mat-elevation-z16">
+        <mat-card-title>
+            Popular Movies
+        </mat-card-title>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item *ngFor="let movie of allMovies" (mouseenter)="hoverItem(movie)" (mouseleave)="hoverItem(null)" [ngClass]="{'hovered-item': movie === hoveredMovie}">{{ movie.name }}</mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -12,6 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material-module/material-module.module';
 import { AppFacade } from './+store/facade/app.facade';
+import { MoviesModule } from './movies/movies.module';
 
 @NgModule({
   declarations: [

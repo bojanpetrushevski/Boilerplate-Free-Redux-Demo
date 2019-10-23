@@ -13,14 +13,6 @@ export class AppReducerClass extends ReducerClass<IAppState> {
        appName: action.payload
     };
   }
-
-  // @Action
-  // public AuthSelectCompany(state: IAppState, action: fromAuthActions.SetAppName): IAppState {
-  //   return {
-  //     ...state,
-  //     selectedCompany: action.payload
-  //   };
-  // }
 }
 
 export const appReducer = AppReducerClass.create();

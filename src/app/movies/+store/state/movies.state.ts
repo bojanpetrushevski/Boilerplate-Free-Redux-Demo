@@ -1,5 +1,7 @@
 import { Movie } from '../../models/movie.view-model';
 
+export const MOVIES_FEATURE_KEY = 'movies';
+
 export interface IState {
     moviesState: IMoviesState;
 }
@@ -9,6 +11,6 @@ export interface IMoviesState {
     allMovies: Movie[];
 }
 
-export const initialAppState: IMoviesState = {
+export const initialMovieState: IMoviesState = {
     allMovies: null
 };

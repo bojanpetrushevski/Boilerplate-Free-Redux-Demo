@@ -10,8 +10,8 @@ export class AppFacade {
 
   constructor(private store: Store<IState>) { }
 
-  public setAppName(): void {
-      this.store.dispatch(new SetAppName('Tv Shows'));
+  public setAppName(name: string): void {
+      this.store.dispatch(new SetAppName(name));
   }
 
   public getAppName(): Observable<string> {
