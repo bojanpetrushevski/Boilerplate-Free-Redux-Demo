@@ -1,0 +1,16 @@
+<div class="main-div">
+    <mat-card class="mat-elevation-z16">
+        <mat-card-title>
+            Popular TV Shows
+        </mat-card-title>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item *ngFor="let tvShow of allTvShows" 
+                (mouseenter)="hoverItem(tvShow)" 
+                (mouseleave)="hoverItem(null)" 
+                (click)="goToTvShow(tvShow)"
+                [ngClass]="{'hovered-item': tvShow === hoveredTvShow}">{{ tvShow.name }}</mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>

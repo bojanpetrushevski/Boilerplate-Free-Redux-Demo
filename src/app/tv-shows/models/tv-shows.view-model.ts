@@ -1,4 +1,5 @@
-export class Movie {
+export class TvShowViewModel {
+    public id: string;
     public name: string;
     public popularity: string;
     public originCountry: string;

@@ -1,0 +1,22 @@
+<div *ngIf="tvShow" class="main-div">
+    <mat-card class="mat-elevation-z16">
+        <mat-card-title>{{ tvShow.name }}</mat-card-title>
+        <mat-card-subtitle> Average vote: {{ tvShow.averageVote }}</mat-card-subtitle>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    <label>Popularity: {{ tvShow.popularity }}</label>
+                </mat-list-item>
+                <mat-list-item>
+                    <label>Origin country: {{ tvShow.originCountry }}</label>
+                </mat-list-item>
+                <mat-list-item>
+                    <label>Description: </label>
+                </mat-list-item>
+                <mat-list-item>
+                        <p>{{ tvShow.description }}</p>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,4 +1,5 @@
-export class MovieResponse {
+export class TvShowResponse {
+    public id: number;
     public name: string;
     public popularity: string;
     // tslint:disable-next-line: variable-name
@@ -8,6 +9,6 @@ export class MovieResponse {
     public overview: string;
 }
 
-export class MoviesResponse {
-    public results: MovieResponse[];
+export class TvShowsResponse {
+    public results: TvShowResponse[];
 }

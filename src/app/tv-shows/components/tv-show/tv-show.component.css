@@ -1,0 +1,12 @@
+.main-div {
+    margin: 50px !important;
+    padding-bottom: 30px !important;
+}
+
+mat-card-title {
+    text-align: center !important;
+}
+
+mat-card-subtitle {
+    text-align: center !important;
+}
