@@ -1,13 +1,13 @@
-import { IState, IAppState } from '../state/app.state';
+import { State, AppState } from '../state/app.state';
 import { createSelector } from '@ngrx/store';
 
-const selectApp = (state: IState) => state.appState;
+const selectApp = (state: State) => state.appState;
 
-const getAppName = createSelector(
+const selectTitle = createSelector(
     selectApp,
-    (app: IAppState) => app.appName
+    (app: AppState) => app.title
 );
 
 export const appQuery = {
-    getAppName
+    selectTitle
 };

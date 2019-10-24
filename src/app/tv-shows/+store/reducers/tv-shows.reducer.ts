@@ -1,6 +1,6 @@
 import { ReducerClass, Action } from 'reducer-class';
 import { TvShowsState, initialTvShowsState } from '../state/tv-shows.state';
-import { GetAllTvShowsSuccess, GetTvShowSuccess } from '../actions/tv-shows.actions';
+import { GetAllTvShowsSuccess, GetTvShowSuccess, RemoveSelectedTvShow } from '../actions/tv-shows.actions';
 
 export class TvShowsReducerClass extends ReducerClass<TvShowsState> {
   public initialState: TvShowsState = initialTvShowsState;
@@ -18,6 +18,14 @@ export class TvShowsReducerClass extends ReducerClass<TvShowsState> {
     return {
       ...state,
       selectedTvShow: action.payload
+    };
+  }
+
+  @Action(RemoveSelectedTvShow)
+  public removeSelectedTvShow(state: TvShowsState, action: RemoveSelectedTvShow): TvShowsState {
+    return {
+      ...state,
+      selectedTvShow: null
     };
   }
 }

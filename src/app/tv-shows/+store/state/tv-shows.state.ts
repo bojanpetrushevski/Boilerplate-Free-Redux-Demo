@@ -1,8 +1,8 @@
 import { TvShowViewModel } from '../../models/tv-shows.view-model';
 
-export const TV_SHOWS_FEATURE_KEY = 'tv-shows';
+export const TV_SHOWS_FEATURE_KEY = 'tvShows';
 
-export interface IState {
+export interface State {
     tvShowsState: TvShowsState;
 }
 

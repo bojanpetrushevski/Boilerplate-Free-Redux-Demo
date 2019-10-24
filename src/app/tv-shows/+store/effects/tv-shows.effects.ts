@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import { GetAllTvShows, GetAllTvShowsSuccess, GetTvShow, GetTvShowSuccess } from '../actions/tv-shows.actions';
 import { TvShowViewModel } from '../../models/tv-shows.view-model';
-import { IState } from '../state/tv-shows.state';
+import { State } from '../state/tv-shows.state';
 import { TvShowsApiService } from '../../services/tv-shows-api.service';
 
 @Injectable()
@@ -27,6 +27,6 @@ export class TvShowsEffects {
     constructor(
         private tvShowsApiService: TvShowsApiService,
         private actions$: Actions,
-        private store: Store<IState>
+        private store: Store<State>
     ) { }
 }

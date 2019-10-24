@@ -10,3 +10,5 @@ export class GetAllTvShowsSuccess extends ActionStandard<TvShowViewModel[]> {}
 export class GetTvShow extends ActionStandard<string> {}
 
 export class GetTvShowSuccess extends ActionStandard<TvShowViewModel> {}
+
+export class RemoveSelectedTvShow extends ActionStandard {}

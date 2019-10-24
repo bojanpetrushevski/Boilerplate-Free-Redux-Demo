@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Query } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { GetAllTvShows, GetTvShow } from '../actions/tv-shows.actions';
-import { IState } from '../state/tv-shows.state';
+import { GetAllTvShows, GetTvShow, RemoveSelectedTvShow } from '../actions/tv-shows.actions';
+import { State } from '../state/tv-shows.state';
 import { TvShowViewModel } from '../../models/tv-shows.view-model';
 import { tvShowsQuery } from '../selectors/tv-shows.selector';
 
 @Injectable()
 export class TvShowsFacade {
-    constructor(private store: Store<IState>) {}
+    constructor(private store: Store<State>) {}
 
     public getAllTvShows(): void {
         this.store.dispatch(new GetAllTvShows());
@@ -24,5 +24,9 @@ export class TvShowsFacade {
 
     public selectTvShow(): Observable<TvShowViewModel> {
         return this.store.pipe(select(tvShowsQuery.selectTvShow));
+    }
+
+    public removeSelectedTvShow(): void {
+        return this.store.dispatch(new RemoveSelectedTvShow());
     }
  }

@@ -11,19 +11,22 @@ import { TvShowsFacade } from '../../+store/facade/tv-shows.facade';
 export class TvShowListComponent implements OnInit {
   public allTvShows: TvShowViewModel[];
   public hoveredTvShow: TvShowViewModel;
+  public isLoading: boolean;
 
   constructor(private facade: TvShowsFacade, private router: Router) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.facade.getAllTvShows();
     this.facade.selectAllTvShows()
     .subscribe({
       next: (result: TvShowViewModel[]) => {
-        console.log(result);
         this.allTvShows = result;
+        this.isLoading = false;
       },
       error: error => {
         console.log(error);
+        this.isLoading = false;
       }
     });
   }

@@ -1,16 +1,15 @@
 import { ReducerClass, Action } from 'reducer-class';
-import { IAppState, initialAppState } from '../state/app.state';
+import { AppState, initialAppState } from '../state/app.state';
 import * as fromAppActions from '../actions/app.actions';
 
-export class AppReducerClass extends ReducerClass<IAppState> {
-  public initialState: IAppState = initialAppState;
+export class AppReducerClass extends ReducerClass<AppState> {
+  public initialState: AppState = initialAppState;
 
-  @Action(fromAppActions.SetAppName)
-  public setAppName(state: IAppState, action: fromAppActions.SetAppName): IAppState {
-    console.log(action.type);
+  @Action(fromAppActions.SetTitle)
+  public setTitle(state: AppState, action: fromAppActions.SetTitle): AppState {
     return {
       ...state,
-       appName: action.payload
+       title: action.payload
     };
   }
 }

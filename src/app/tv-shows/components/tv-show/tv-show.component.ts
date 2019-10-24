@@ -10,11 +10,15 @@ import { TvShowViewModel } from '../../models/tv-shows.view-model';
 })
 export class TvShowComponent implements OnInit, OnDestroy {
   private tvShowId: string;
-  private tvShow: TvShowViewModel;
+  public tvShow: TvShowViewModel;
+  public isLoading: boolean;
+
   constructor(private facade: TvShowsFacade,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.isLoading = true;
+    this.tvShow = null;
     this.route.paramMap
       .subscribe(
         paramMap => {
@@ -25,16 +29,17 @@ export class TvShowComponent implements OnInit, OnDestroy {
     this.facade.selectTvShow()
       .subscribe({
         next: (result: TvShowViewModel) => {
+          this.isLoading = false;
           this.tvShow = result;
         },
         error: error => {
           console.log(error);
+          this.isLoading = false;
         }
       });
   }
 
   ngOnDestroy(): void {
-    this.tvShow = null;
-    this.tvShowId = null;
+    this.facade.removeSelectedTvShow();
   }
 }

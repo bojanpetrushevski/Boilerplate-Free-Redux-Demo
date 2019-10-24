@@ -1,12 +1,11 @@
-export interface IState {
-    appState: IAppState;
+export interface State {
+    appState: AppState;
 }
 
-// tslint:disable-next-line:no-empty-interface
-export interface IAppState {
-    appName: string;
+export interface AppState {
+    title: string;
 }
 
-export const initialAppState: IAppState = {
-    appName: 'Boilerplate Free Redux'
+export const initialAppState: AppState = {
+    title: null
 };
